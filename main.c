@@ -4,16 +4,6 @@
 #include <time.h>
 #include <math.h>
 
-struct cadastro
-{
-    char nome;
-    int cpf;
-    int idade;
-    int numeroDependentes;
-    int contPrevidenciaria;
-    int totalRend;
-};
-
 void delay(unsigned int mseconds)
 {
     clock_t goal = mseconds + clock();
