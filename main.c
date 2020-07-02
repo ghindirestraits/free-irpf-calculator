@@ -23,7 +23,10 @@ void delay(unsigned int mseconds)
 
 void cadastroSimples(void)
 {
-    char nome[50], contPrev[12], totalRend[12], CPF[15];
+    char nome[50], contPrev[12], totalRend[12], CPF[15], base, IRPF = 0;
+    //float Base_IRPF, IRPF = 0;
+    int n, d, i;
+    //prev = ;
         printf("\n Nome: ");
         gets (nome);
         scanf("%c", &nome);
@@ -36,7 +39,15 @@ void cadastroSimples(void)
                     printf("\n Total Rend.: R$");
                     gets (totalRend);
                     scanf("%d", &totalRend);
-    system("cls");
+                    base = totalRend-contPrev;
+                    if(base<=12000)	printf("\nIsento de Imposto de Renda");
+                    if(base>=12000 && base<=24000) IRPF = base * 0.15;
+                    if(base>=24000) IRPF = base * 0.275;
+                    printf("\nSalario Liquido: %.2f\n", totalRend - IRPF);
+//                    return 0;
+
+
+//    system("cls");
 }
 
 void cadastroCompleto(void)
@@ -60,7 +71,7 @@ void cadastroCompleto(void)
                             printf("\n Total Rend.: R$");
                             gets (totalRend);
                             scanf("%d", &totalRend);
-    system("cls");
+//    system("cls");
 }
 
 /******************* função principal (main) *********************/

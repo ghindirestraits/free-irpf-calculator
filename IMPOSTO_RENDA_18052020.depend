@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1589838864 source:c:\users\rauppc\desktop\01 - puc\arquivos aula\2020 - 01\eng software\trabalho2\imposto_renda_18052020\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	<math.h>
+
