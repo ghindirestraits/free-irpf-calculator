@@ -1,8 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
-#include <time.h>
-#include <math.h>
+#include<time.h>
+#include<math.h>
+
+struct cadastro
+{
+    char nome;
+    int cpf;
+    int idade;
+    int numeroDependentes;
+    int contPrevidenciaria;
+    int totalRend;
+};
 
 void delay(unsigned int mseconds)
 {
@@ -10,36 +20,32 @@ void delay(unsigned int mseconds)
     while (goal > clock());
 }
 
+
 void cadastroSimples(void)
 {
-    char nome[50], contPrev[12], totalRend[12], CPF[15];
-    float contPrev_f, totalRend_f, base, IRPF = 0;
-    
-    printf("\n Nome: ");
-    gets (nome);
-    scanf("%c", &nome);
-
-    printf("\n CPF: ");
-    gets (CPF);
-    scanf("%c", &CPF);
-
-    printf("\n Contr. Previd.: R$");
-    gets (contPrev);
-    scanf("%c", &contPrev);
-    contPrev_f = atof(contPrev);
-
-    printf("\n Total Rend.: R$");
-    gets (totalRend);
-    scanf("%c", &totalRend);
-    totalRend_f = atof(totalRend);
-
-    base = totalRend_f - contPrev_f;
-    base = base * 0.95;
-    if(base<=12000)	printf("\nIsento de Imposto de Renda");
-    if(base>=12000 && base<=24000) IRPF = base * 0.15;
-    if(base>=24000) IRPF = base * 0.275;
-    printf("\nSalario Liquido: %.2f", totalRend - IRPF);
-    printf("\n\n\n\n\n");
+    char nome[50], contPrev[12], totalRend[12], CPF[15], base, IRPF = 0;
+    //float Base_IRPF, IRPF = 0;
+    int n, d, i;
+    //prev = ;
+        printf("\n Nome: ");
+        gets (nome);
+        scanf("%c", &nome);
+            printf("\n CPF: ");
+            gets (CPF);
+            scanf("%d", &CPF);
+                printf("\n Contr. Previd.: R$");
+                gets (contPrev);
+                scanf("%d", &contPrev);
+                    printf("\n Total Rend.: R$");
+                    gets (totalRend);
+                    scanf("%d", &totalRend);
+                    base = totalRend-contPrev;
+                    base = base * 0.95;
+                    if(base<=12000)	printf("\nIsento de Imposto de Renda");
+                    if(base>=12000 && base<=24000) IRPF = base * 0.15;
+                    if(base>=24000) IRPF = base * 0.275;
+                    printf("\nSalario Liquido: %.2f", totalRend - IRPF);
+                    printf("\n\n\n\n\n");
 //                    return 0;
 
 
@@ -48,7 +54,8 @@ void cadastroSimples(void)
 
 void cadastroCompleto(void)
 {
-    char nome[50], contPrev[12], totalRend[12], CPF[15], idade[2], numDepend[2];
+    char nome[50], contPrev[12], totalRend[12], CPF[15], idade[12], numDepend[12], Base_IRPF, IRPF = 0;
+    //float totalRend = 0, Base_IRPF, IRPF = 0, contPrev;
         printf("\n Nome: ");
         gets (nome);
         scanf("%c", &nome);
@@ -67,10 +74,31 @@ void cadastroCompleto(void)
                             printf("\n Total Rend.: R$");
                             gets (totalRend);
                             scanf("%d", &totalRend);
+                            Base_IRPF = totalRend - contPrev;
+                            if(idade <65)
+                                {
+                                    if(numDepend <= 2) Base_IRPF = Base_IRPF * 0.98;
+                                    if(numDepend >= 3 && numDepend <= 5) Base_IRPF = Base_IRPF * 0.965;
+                                    if(numDepend > 5) Base_IRPF = Base_IRPF * 0.95;
+                                }
+                            if(idade >=65)
+                                {
+                                    if(numDepend <= 2) Base_IRPF = Base_IRPF * 0.98;
+                            if(numDepend >= 3 && numDepend <= 5) Base_IRPF = Base_IRPF * 0.965;
+                            if(numDepend > 5) Base_IRPF = Base_IRPF * 0.95;
+                            }
+                            if(Base_IRPF<=12000)
+                                printf("\nIsento de Imposto de Renda");
+                            if(Base_IRPF>=12000 && Base_IRPF<=24000) IRPF = Base_IRPF * 0.15;
+                            if(Base_IRPF>=24000) IRPF = Base_IRPF * 0.275;
+                            printf("\nIRPF");
+                            printf("\nSalário Liquído: %.2f\n", totalRend - IRPF);
+                            printf("\n\n\n\n\n");
+
 //    system("cls");
 }
 
-/******************* funÃ§Ã£o principal (main) *********************/
+/******************* função principal (main) *********************/
 
 int main(void)
 {
