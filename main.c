@@ -12,29 +12,34 @@ void delay(unsigned int mseconds)
 
 void cadastroSimples(void)
 {
-    char nome[50], contPrev[12], totalRend[12], CPF[15], base, IRPF = 0;
-    //float Base_IRPF, IRPF = 0;
-    int n, d, i;
-    //prev = ;
-        printf("\n Nome: ");
-        gets (nome);
-        scanf("%c", &nome);
-            printf("\n CPF: ");
-            gets (CPF);
-            scanf("%d", &CPF);
-                printf("\n Contr. Previd.: R$");
-                gets (contPrev);
-                scanf("%d", &contPrev);
-                    printf("\n Total Rend.: R$");
-                    gets (totalRend);
-                    scanf("%d", &totalRend);
-                    base = totalRend-contPrev;
-                    base = base * 0.95;
-                    if(base<=12000)	printf("\nIsento de Imposto de Renda");
-                    if(base>=12000 && base<=24000) IRPF = base * 0.15;
-                    if(base>=24000) IRPF = base * 0.275;
-                    printf("\nSalario Liquido: %.2f", totalRend - IRPF);
-                    printf("\n\n\n\n\n");
+    char nome[50], contPrev[12], totalRend[12], CPF[15];
+    float contPrev_f, totalRend_f, base, IRPF = 0;
+    
+    printf("\n Nome: ");
+    gets (nome);
+    scanf("%c", &nome);
+
+    printf("\n CPF: ");
+    gets (CPF);
+    scanf("%c", &CPF);
+
+    printf("\n Contr. Previd.: R$");
+    gets (contPrev);
+    scanf("%c", &contPrev);
+    contPrev_f = atof(contPrev);
+
+    printf("\n Total Rend.: R$");
+    gets (totalRend);
+    scanf("%c", &totalRend);
+    totalRend_f = atof(totalRend);
+
+    base = totalRend_f - contPrev_f;
+    base = base * 0.95;
+    if(base<=12000)	printf("\nIsento de Imposto de Renda");
+    if(base>=12000 && base<=24000) IRPF = base * 0.15;
+    if(base>=24000) IRPF = base * 0.275;
+    printf("\nSalario Liquido: %.2f", totalRend - IRPF);
+    printf("\n\n\n\n\n");
 //                    return 0;
 
 
