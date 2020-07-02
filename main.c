@@ -22,44 +22,55 @@ void delay(unsigned int mseconds)
 
 void cadastroSimples(void)
 {
-    char nome[50], contPrev[12], totalRend[12], CPF[15];
-    printf("\n Nome: ");
-    gets (nome);
-    scanf("%c", &nome);
-    printf("\n CPF: ");
-    gets (CPF);
-    scanf("%d", &CPF);
-    printf("\n Contr. Previd.: R$");
-    gets (contPrev);
-    scanf("%d", &contPrev);
-    printf("\n Total Rend.: R$");
-    gets (totalRend);
-    scanf("%d", &totalRend);
-    system("cls");
+    char nome[50], contPrev[12], totalRend[12], CPF[15], base, IRPF = 0;
+    //float Base_IRPF, IRPF = 0;
+    int n, d, i;
+    //prev = ;
+        printf("\n Nome: ");
+        gets (nome);
+        scanf("%c", &nome);
+            printf("\n CPF: ");
+            gets (CPF);
+            scanf("%d", &CPF);
+                printf("\n Contr. Previd.: R$");
+                gets (contPrev);
+                scanf("%d", &contPrev);
+                    printf("\n Total Rend.: R$");
+                    gets (totalRend);
+                    scanf("%d", &totalRend);
+                    base = totalRend-contPrev;
+                    if(base<=12000)	printf("\nIsento de Imposto de Renda");
+                    if(base>=12000 && base<=24000) IRPF = base * 0.15;
+                    if(base>=24000) IRPF = base * 0.275;
+                    printf("\nSalario Liquido: %.2f\n", totalRend - IRPF);
+//                    return 0;
+
+
+//    system("cls");
 }
 
 void cadastroCompleto(void)
 {
     char nome[50], contPrev[12], totalRend[12], CPF[15], idade[2], numDepend[2];
-    printf("\n Nome: ");
-    gets (nome);
-    scanf("%c", &nome);
-    printf("\n CPF: ");
-    gets (CPF);
-    scanf("%d", &CPF);
-    printf("\n Idade: ");
-    gets (idade);
-    scanf("%d", &idade);
-    printf("\n Num. Dependentes: ");
-    gets (numDepend);
-    scanf("%d", &numDepend);
-    printf("\n Contr. Previd.: R$");
-    gets (contPrev);
-    scanf("%d", &contPrev);
-    printf("\n Total Rend.: R$");
-    gets (totalRend);
-    scanf("%d", &totalRend);
-    system("cls");
+        printf("\n Nome: ");
+        gets (nome);
+        scanf("%c", &nome);
+            printf("\n CPF: ");
+            gets (CPF);
+            scanf("%d", &CPF);
+                printf("\n Idade: ");
+                gets (idade);
+                scanf("%d", &idade);
+                    printf("\n Num. Dependentes: ");
+                    gets (numDepend);
+                    scanf("%d", &numDepend);
+                        printf("\n Contr. Previd.: R$");
+                        gets (contPrev);
+                        scanf("%d", &contPrev);
+                            printf("\n Total Rend.: R$");
+                            gets (totalRend);
+                            scanf("%d", &totalRend);
+//    system("cls");
 }
 
 /******************* função principal (main) *********************/
