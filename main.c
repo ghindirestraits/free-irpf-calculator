@@ -40,10 +40,12 @@ void cadastroSimples(void)
                     gets (totalRend);
                     scanf("%d", &totalRend);
                     base = totalRend-contPrev;
+                    base = base * 0.95;
                     if(base<=12000)	printf("\nIsento de Imposto de Renda");
                     if(base>=12000 && base<=24000) IRPF = base * 0.15;
                     if(base>=24000) IRPF = base * 0.275;
-                    printf("\nSalario Liquido: %.2f\n", totalRend - IRPF);
+                    printf("\nSalario Liquido: %.2f", totalRend - IRPF);
+                    printf("\n\n\n\n\n");
 //                    return 0;
 
 
