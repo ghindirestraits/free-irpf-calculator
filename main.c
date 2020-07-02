@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
-#include<time.h>
-#include<math.h>
+#include <time.h>
+#include <math.h>
 
 struct cadastro
 {
@@ -20,50 +20,49 @@ void delay(unsigned int mseconds)
     while (goal > clock());
 }
 
-
 void cadastroSimples(void)
 {
     char nome[50], contPrev[12], totalRend[12], CPF[15];
-        printf("\n Nome: ");
-        gets (nome);
-        scanf("%c", &nome);
-            printf("\n CPF: ");
-            gets (CPF);
-            scanf("%d", &CPF);
-                printf("\n Contr. Previd.: R$");
-                gets (contPrev);
-                scanf("%d", &contPrev);
-                    printf("\n Total Rend.: R$");
-                    gets (totalRend);
-                    scanf("%d", &totalRend);
+    printf("\n Nome: ");
+    gets (nome);
+    scanf("%c", &nome);
+    printf("\n CPF: ");
+    gets (CPF);
+    scanf("%d", &CPF);
+    printf("\n Contr. Previd.: R$");
+    gets (contPrev);
+    scanf("%d", &contPrev);
+    printf("\n Total Rend.: R$");
+    gets (totalRend);
+    scanf("%d", &totalRend);
     system("cls");
 }
 
 void cadastroCompleto(void)
 {
     char nome[50], contPrev[12], totalRend[12], CPF[15], idade[2], numDepend[2];
-        printf("\n Nome: ");
-        gets (nome);
-        scanf("%c", &nome);
-            printf("\n CPF: ");
-            gets (CPF);
-            scanf("%d", &CPF);
-                printf("\n Idade: ");
-                gets (idade);
-                scanf("%d", &idade);
-                    printf("\n Num. Dependentes: ");
-                    gets (numDepend);
-                    scanf("%d", &numDepend);
-                        printf("\n Contr. Previd.: R$");
-                        gets (contPrev);
-                        scanf("%d", &contPrev);
-                            printf("\n Total Rend.: R$");
-                            gets (totalRend);
-                            scanf("%d", &totalRend);
+    printf("\n Nome: ");
+    gets (nome);
+    scanf("%c", &nome);
+    printf("\n CPF: ");
+    gets (CPF);
+    scanf("%d", &CPF);
+    printf("\n Idade: ");
+    gets (idade);
+    scanf("%d", &idade);
+    printf("\n Num. Dependentes: ");
+    gets (numDepend);
+    scanf("%d", &numDepend);
+    printf("\n Contr. Previd.: R$");
+    gets (contPrev);
+    scanf("%d", &contPrev);
+    printf("\n Total Rend.: R$");
+    gets (totalRend);
+    scanf("%d", &totalRend);
     system("cls");
 }
 
-/******************* função principal (main) *********************/
+/******************* funÃ§Ã£o principal (main) *********************/
 
 int main(void)
 {
